@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://kit.fontawesome.com/0ec7d0aa98.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación</title>
+    <style>
+ *{ 
+            box-sizing: border-box;
+             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        html, body{
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            scroll-behavior: smooth;
+           background-color: #fff;
+        }
+        *::selection{
+            background-color: #5E8C61;
+        }
+  
+        .vista{
+            display: none;
+       
+
+        }
+        .activa{
+            display: inherit;
+        }
+        img{
+            border-radius: 10px;
+            width: 100%;
+            height: 11em;
+            object-fit: cover;
+            object-position: center;
+        }
+        .row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+   .vista{
+            display: none;
+        }
+        .activa{
+            display: inherit;
+        }
+        .reversa, .reversa2{
+display: flex;
+flex-wrap: nowrap;
+width: 100%;
+
+        }
+        p{
+            font-size: 1.2em;
+        }
+#home{
+    width: 100%;
+    height: 100%;
+  
+}
+#pg1{
+    width: 100%;
+    height: 100%;
+   
+}
+#pg2{
+    width: 100%;
+    height: 100%;
+   
+}
+/* fin de las propiedades obligatoiras */
+
+#home .header{
+   padding: 4em;
+   height: 65vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-image: url(https://st1.uvnimg.com/af/e1/34c8d9f843b4a2d51fcd42a691d1/comida-mexicana.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position-y: -100px;
+    background-repeat: no-repeat; 
+   
+}
+#home .header .banner{
+      background-color: rgba(0, 0, 0 , 0.7 );
+    padding: 20px;
+    border-radius: 10px;
+    color: #C9B037;
+    font-size: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.Title{
+    color: #fff;
+    font-size: 1.5em;
+text-transform: uppercase;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px 50px;
+margin-left: 5px;
+    transition: all 0.5s;
+
+}
+.Title:hover{
+    background-color: #5E8C61;
+}
+#home .header .banner p{
+    margin: 0 0 10px;
+    font-size: 1em;
+    color: #fff;
+}
+#home .nav{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  text-decoration: none;
+  background-color: #006341;
+  border-bottom : 4px solid #C9B037;
+}
+
+#home .nav  a{
+      color: #fff	;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Bell MT;
+    z-index: 10;
+    transition: all 1s;
+    font-size: 1.6em;
+}
+#home .nav  a:hover{
+    background-color: #5E8C61;
+}
+.contenedor, .contenedor2, .contenedor3{
+    display: none; 
+ width: 100%;
+ height: 100%;
+ 
+    
+}
+.contenedor a, .contenedor2 a, .contenedor3 a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+   
+}
+.contenedor2 li, .contenedor3 li{
+    list-style: none;
+}
+#check, #check2, #check3{
+    display: none;
+}
+.checkbtn, .checkbtn2, .checkbtn3{
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    
+
+}
+#home .row .reversa .aside{
+    flex: 30%;
+    padding: 20px;
+    color: #222222;
+  background-color: #FAF6F0;
+        border-right: 4px solid #C9B037;
+
+}
+#home .row .reversa .aside .aside_article{
+      width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+#home .row .reversa .aside h3{
+    text-transform: uppercase;
+    color: #00913F;
+}
+#contador{
+    font-size: 1.5em;
+    color: #000;
+}
+#home .row .reversa .main{
+     flex: 70%;
+    padding: 10px;
+  background-color: #F5F5F5;
+    color: #222222;
+   font-size: 1.5em;
+}
+
+.titulo{
+         text-transform: uppercase;
+
+color: #006341;
+}
+.subtitulo{
+    color: #CE1126;
+}
+
+#home .row .reversa .main .article{
+     width: 100%;
+    border-radius: 10px;
+}
+.resaltar{
+    color: #5E8C61;
+}
+
+footer{
+       width: 100%;
+       /* CE1126 */
+background-color: #CE1126;
+border-top: 4px solid #C9B037;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    height: 100%;
+    display: flex;
+}
+
+#pg1 .header, #pg2 .header {
+
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        justify-content: start;
+        align-items: center;
+  
+        
+}
+
+#pg1 .header .nav, #pg2 .header .nav{
+background-color: #006341;
+padding: 10px;
+display: flex;
+flex-direction: row-reverse;
+width: 100%;
+padding: 0;
+border-bottom: 4px solid #C9B037;
+
+
+}
+#pg1 .header .nav .navbar, #pg2 .header .nav .navbar{
+float: right;
+    margin-left: 30px;
+
+    
+} 
+#pg1 .header .nav .navbar li, #pg2 .header .nav .navbar li{
+       display: inline-block;
+    line-height: 30px;
+    margin: 0 5px;
+
+}
+#pg1 .header .nav .navbar li a, #pg2 .header .nav .navbar li a{
+      color: #fff;
+    font-family: Bell Mt;
+    padding: 2px 13px;
+    border-radius: 10px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.2em;
+}
+li .active,#pg1 .header .nav .navbar li a:hover, #pg2 .header .nav .navbar li a:hover{
+    background-color: #5E8C61;
+} 
+#pg1 .header .nav .navbar  a, #pg2 .header .nav .navbar li a{
+        display: inline-block;
+    line-height: 50px;
+     color: #fff;
+    padding: 7px 13px;
+    border-radius: 3px;
+    margin: 0 5px;
+    
+}
+#pg1 .header .nav .navbar a:hover, #pg2 .header .nav .navbar a:hover{
+    color: #fff;
+}
+#pg1 .row .reversa2 .banner, #pg2 .row .reversa2 .banner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+ border-bottom: 4px solid #C9B037;
+ 
+
+    
+}
+#pg1 .row .reversa2 .main, #pg2 .row .reversa2 .main{
+    display: flex;
+    flex: 70%;
+flex-direction: column;
+padding: 5px;
+background-color: #F5F5F5;
+
+}
+#pg1 .row .reversa2 .aside, #pg2 .row .reversa2 .aside{
+ display: flex;
+ flex: 30%;   
+ flex-direction: column;
+ padding: 5px;
+ background-color: #FAF6F0; 
+
+ border-left: 4px solid #C9B037; 
+}
+#pg1 .row .reversa2 .aside .aside_article, #pg2 .row .reversa2 .aside .aside_article{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+#pg1 .row .reversa2 .main .article, #pg2 .row .reversa2 .main .article{
+    margin: 10px;
+    padding: 20px;
+ text-align: justify;
+background-color: #F5F5F5;
+font-size: 1.3em;
+border-radius: 10px;
+
+}
+#pg1 .row .reversa2 .aside .aside_article, #pg2 .row .reversa2 .aside .aside_article{
+       border-radius: 10px;
+    background-color: #FAF6F0;
+    margin: 10px;
+    padding: 20px;
+    text-align: justify ;
+font-size: 1.3em;
+}
+.res{
+    background-color: #006341;
+    width: 100%;
+  display: none;
+    padding: 5px;
+
+}
+ .dir{
+    color: #CE1126;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 1.5em;
+   
+ }
+
+/*Responsive*/
+@media screen and (max-width: 1000px){
+     #home .header{
+        padding: 1em;
+         justify-content: center;
+        align-items: center; 
+        background-position: center;
+        height: 45vh;
+        
+    }
+    #home .header .banner{
+        padding: 0.5em;
+        width: 80%; 
+        justify-content: center;
+        
+
+    }
+    #pg1 .row .reversa2 .main .article, #pg2 .row .reversa2 .main .article{
+    margin: 10px;
+    padding: 20px;
+ text-align: justify;
+background-color: #F5F5F5;
+border-radius: 10px;
+font-size: 1.8em;
+}
+.reversa{
+    flex-direction: column-reverse;
+}    
+.reversa2{
+    flex-direction: column;
+}
+#home .nav{
+    font-size: 1.5em;
+    margin: 0;
+    justify-content: space-around;
+}
+ #pg1 .row .reversa2  .aside, #pg2 .row .reversa2 .aside{   
+ text-align: justify;
+
+ border: none;
+font-size: 1.6em;
+    }
+       #home .row .reversa .aside{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: none;
+        font-size: 1.6em;
+    }
+       .texto {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.texto.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.titulo{
+    text-align: center;
+}
+.subtitulo{
+    text-align: center;
+}
+.resaltar{
+    margin-top: 3em;
+    text-align: center;
+}
+ #home .row .reversa .main{
+     justify-content: center;
+     align-items: center;
+     flex: 100%;
+     text-align: center;
+     font-size: 1.6em;
+     padding: 5px;
+}
+footer{
+    font-size: 1.5em;
+}
+#pg1 .row .reversa2 .main, #pg2 .row .reversa2 .main{
+    justify-content: center;
+    align-items: center;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+#pg1 .row .reversa2 .main .article, #pg2 .row .reversa2 .main .article{
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+ #pg1 .row .reversa2  .aside .aside_article, #p2 .row .reversa2 .aside .aside_article{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+     img{
+        height: 15em;
+        width: 90%;
+    }
+    .activo{
+    background: #006341;
+}
+ .activo,.contenedor a:focus, .contenedor2 li a:focus, .contenedor3 li a:focus{
+background-color: #006341;
+}
+ .contenedor a:hover, .contenedor2 li a:hover, .contenedor3 li a:hover{
+background-color: transparent;
+}
+.Title{
+    font-size: 2em;
+        padding: 5px 30px;
+    margin: 5px;
+}
+.Title:hover{
+    background-color: transparent;
+}
+#pg1 .header .nav .navbar li a, #pg2 .header .nav .navbar li a{
+    font-size: 1.5em;
+}
+#pg1 .header .nav .navbar li a:hover, #pg2 .header .nav .navbar li a:hover{
+    background-color: transparent;
+}
+
+}
+
+
+
+@media screen and (max-width: 800px){
+    .Title:hover{
+    background-color: transparent;
+}
+  .activo{
+    background: #006341;
+}
+ .activo,.contenedor a:focus, .contenedor2 li a:focus, .contenedor3 li a:focus{
+background-color: #006341;
+}
+ .contenedor a:hover, .contenedor2 li a:hover, .contenedor3 li a:hover{
+background-color: transparent;
+}
+    img{
+        height: 20em;
+        width: 90%;
+    }
+    #pg1 .row .reversa2  .aside .aside_article, #p2 .row .reversa2 .aside .aside_article{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title_banner{
+        font-size: 1.6em;
+    }
+    #home .header .banner p{
+    margin: 0 0 10px;
+    font-size: 1.3em;
+    color: #fff;
+}
+#pg1 .header .nav, #pg2 .header .nav{
+    flex-direction: row;
+
+}
+   *{
+    font-size: 0.9em;
+   }
+   
+    .texto {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.texto.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+   /*Para display en celular se quita el aside */
+   .reversa{
+    flex-direction: column-reverse;
+   }
+   .reversa2{
+    flex-direction: column;
+   }
+    #pg1 .row .reversa2  .aside, #pg2 .row .reversa2 .aside{   
+ margin-top: 0;
+ border: none;
+ font-size: 1.2em;
+padding-top: 0;
+    }
+    #home .row .reversa .aside{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: none;
+    }
+
+    /*propiedades adicionales*/
+    #home .header{
+        padding: 1em;
+         justify-content: center;
+        align-items: center; 
+        background-position: center;
+        height: 45vh;
+        
+    }
+    #home .header .banner{
+        padding: 0.5em;
+        width: 95%; 
+        justify-content: center;
+        
+
+    }
+    #home .row .reversa .main{
+     justify-content: center;
+     align-items: center;
+     flex: 100%;
+     padding: 5px;
+}
+.titulo{
+    text-align: center;
+    font-size: 1.5em;
+}
+.subtitulo{
+    text-align: center;
+    font-size: 1.2em;
+}
+.resaltar{
+    margin-top: 3em;
+    text-align: center;
+    font-size: 1.6em;
+
+}
+#home .row .reversa .main .article {
+   
+    text-align:justify;
+    font-size: 1.2em;
+    padding: 0px 10px;
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+/*parte del menu responsive*/
+.nav a{
+    display: none;
+    margin: 0;
+}
+
+.checkbtn, .checkbtn3{
+    display:flex;
+color: #fff;
+font-size: 4em;
+
+}
+.checkbtn2, .checkbtn3{
+    font-size: 6em;
+    display: flex;
+    color: #fff;
+}
+.res, .res2,.res3 {
+      display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+
+    
+}
+#check:checked ~ .checkbtn {
+    
+color: #CE1126;
+
+}
+#check2:checked~.checkbtn2{
+    color: #CE1126;
+}
+#check3:checked ~ .checkbtn3{
+    color: #CE1126;
+}
+.contenedor, .contenedor2, .contenedor3{
+    flex-direction: column;
+    position:fixed;
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    background-color: #006341;
+    top:55vh;
+   align-items: center;
+    display: flex; 
+    color: #fff;
+    transition: all 0.5s; 
+    left: -100%;
+    z-index: 100;
+    font-size: 1.2em;
+  
+}
+
+.contenedor2, .contenedor3{
+    top: 7.1vh;
+}
+.contenedor2 li, .contenedor3 li{
+    margin-top: 10px;
+      padding: 10px 40px;
+}
+.navbar{
+display: none;
+}
+#pg1 .header, #pg2 .header{
+    justify-content: flex-end;
+}
+#pg1 .header .nav .res #check2:checked ~ #pg1 .header .nav .checkbtn2{
+    color: #CE1126;
+}
+.Title{
+    padding: 5px 30px;
+    margin: 5px;
+    font-size:2em;
+}
+#pg1 .header, #pg2 .header{
+    align-items: center;
+}
+#mostrar.visible{
+    left: 0;
+}
+#mostrar2.visible2{
+    left: 0;
+}
+#mostrar3.visible3{
+    left: 0;
+}
+
+
+.contenedor a, .contenedor2 li a, .contenedor3 li a{
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+align-items: center;
+}
+/*fin del menu responsive*/
+#pg1 .row .reversa2 .main, #pg2 .row .reversa2 .main{
+    justify-content: center;
+    align-items: center;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+#pg1 .row .reversa2 .main .article, #pg2 .row .reversa2 .main .article{
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+#pg1 .row .reversa2 .main .article p, #pg2 .row .reversa2 .main .article p{
+    text-align: justify;
+    font-size: 1.2em;
+}
+#pg1 .row .reversa2 .main .article li, #pg2 .row .reversa2 .main .article li{
+    text-align: justify;
+    font-size: 1.2em;
+    align-items: start;
+    list-style: none;
+    margin-top: 1em;
+}
+.contenedor a:hover, .contenedor2 a:hover, .contenedor3 a:hover{
+    background-color: none;
+
+}
+.activo{
+    background: #006341;
+}
+ .activo,.contenedor a:focus, .contenedor2 li a:focus, .contenedor3 li a:focus{
+background-color: #006341;
+}
+ .contenedor a:hover, .contenedor2 li a:hover, .contenedor3 li a:hover{
+background-color: transparent;
+}
+}
+    </style>
+</head>
+<body>
+    <div id="home" class="vista activa">
+        <header class="header">
+             <section class="banner">
+                <!-- <img src="" alt=""> logo de imagen -->
+                <h1 class="title_banner">Muestra Gastronómica</h1>
+                <p>"Sabores Con Sentimiento"</p>
+            </section>  
+        </header>
+           <nav class="nav" id="nav1">
+            <div class="res">
+<input type="checkbox" id="check" >
+<label for="check" class="checkbtn">
+    <i class="fa-solid fa-bars"></i>
+</label>
+</div>
+                    <a href="#" onclick="mostrarVista('home')">Inicio</a>
+                    <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a>
+                    <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a>
+            </nav>
+             <ul class="contenedor" id="mostrar">
+                
+                    <a href="#" onclick="mostrarVista('home')" class="activo">Inicio</a>
+                    <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a>
+                    <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a>
+                </ul>
+        <div class="row">
+           
+ <!-- si se ocupa entonces hacer un div reversa para el responsive -->
+<div class="reversa">
+     <aside class="aside">
+        <section class="aside_article">
+            <h2 class="titulo texto oculto">Lugar:</h2>
+            <p class="texto oculto" ><b>Patio Cívico</b></p>
+            <h2 class="titulo texto oculto">Día:</h2>
+            <p class="texto oculto"><b>20 de Junio de 2025</b></p>
+            <p class="texto oculto"><b>A las 10:00hrs</b></p>
+            <a class="texto oculto dir" href="https://maps.app.goo.gl/mVz5cV124syHX7rb9" target="_blank" >Ver Direccion</a>
+        </section>
+            <section class="aside_article">
+                
+<h3 class="texto oculto">Faltan:</h3>
+<div class="texto oculto" id="contador">Cargando...</div>
+            </section>
+        </aside>
+                <main class="main">
+             
+                    <section class="article">
+                        <h2 class="titulo texto oculto">Te invitamos a nuestro evento</h2>
+                        <h4 class="subtitulo texto oculto">¡Prueba nuestros platillos!</h4>
+                   
+                         <p class="texto oculto">Como parte del PEC y la materia de Lengua y Comunicación con gran alegría le extendemos una invitación para que nos acompañe a este pequeño evento tan especial, lleno de tradición, comida y orgullo mexicano.</p>
+                         <p class="texto oculto">Ven y forma parte de este evento compartiendo tu gusto por la comida mexicana que prepararemos con todo el orgullo mexicano que merece. </p>
+                         <h2 class="texto oculto resaltar" > <b>¡No te lo pierdas!</b></h2>
+                    </section>
+                </main>
+        </div>
+        <footer class="footer texto oculto">
+            <p class="footer_text">CBTis No.168</p>
+        </footer>
+        </div>
+    </div>  
+<div class="vista" id="pg1">
+ <header class="header">
+    <h2 class="Title">¿Qué es?</h2>
+            <nav class="nav">
+                <div class="res2">
+<input type="checkbox" id="check2" >
+<label for="check2" class="checkbtn2">
+    <i class="fa-solid fa-bars"></i>    
+</label>
+</div>
+                <ul class="navbar">
+                   <li> <a class="activo" href="#" onclick="mostrarVista('home')">Inicio</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+        </header>
+             <ul class="contenedor2" id="mostrar2">
+                   <li> <a class="activo" href="#" onclick="mostrarVista('home')">Inicio</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a></li>
+                </ul>
+        <div class="row">
+ <div class="reversa2">
+                <main class="main">
+                    <section class="article">
+                          <h2 class="titulo texto oculto">Nuestro Evento</h2>
+                          <h4 class="subtitulo texto oculto">¿Cómo surgió esta idea?</h4>
+<p class="Atext texto oculto">Lo que nos inspiró en gran medida para llevar a cabo este evento se remonta a una lectura que leímos en el grupo, la novela romántica "Como Agua para Chocolate" de Laura Esquivel, con la finalidad de dar a conocer la tradición, cultura y por supuesto, la comida tradicional de este pais.</p>
+<h4 class="subtitulo texto oculto">¿Qué es lo que haremos?</h4>
+<p class="Atext texto oculto">Durante este encuetro llevaremos a cabo la entrega de 3 platillos distintos, los cuales son Entrada, Plato Principal y Postre respectivamente.</p>
+<p class="Atext texto oculto">Mientras esto ocurre a los invitados se les entregará una hoja blanca, que incluirá distintos campos donde se calificará la calidad de cada platillo en diferentes campos.</p>
+<h4 class="subtitulo texto oculto">¿Quién nos dará cada platillo?</h4>
+<p class="Atext texto oculto">Cada platillo será entregado a cada miembro del jurado por alumnos de nuestro grupo, posteriormente se darán detalles sobre cada platillo que haya sido entregado con la finalidad de dar a conocer la diversidad de cada uno.</p>
+<h4 class="resaltar">¡A disfrutar!</h4>
+                    </section>
+                </main>
+        <aside class="aside">
+            <section class="aside_article">
+                <h2 class="titulo texto oculto">Platillos</h2>
+<h4 class="subtitulo texto oculto">Entrada</h4>
+<img  class="texto oculto" src="https://github.com/luisSir-Alonne/imagenes/blob/main/Comida_proyecto.jpg?raw=true" alt="">
+<h4 class="subtitulo texto oculto">Platillo Principal</h4>
+<img class="texto oculto"  src="https://github.com/luisSir-Alonne/imagenes/blob/main/Comida_2_proyecto.jpg?raw=true" alt="">
+<h4 class="subtitulo texto oculto">Postre</h4>
+<img class="texto oculto"  src="https://github.com/luisSir-Alonne/imagenes/blob/main/Postre_proyecto.jpg?raw=true" alt="">
+            </section>
+        </aside>
+        </div>
+        <footer class="footer texto oculto">
+            <p class="footer_text">CBTis No.168</p>
+        </footer>
+        </div>
+</div>
+<div class="vista" id="pg2">
+ <header class="header">
+     <h2 class="Title">Sobre Nosotros</h2>
+            <nav class="nav">
+                <div class="res3">
+<input type="checkbox" id="check3" >
+<label for="check3" class="checkbtn3">
+    <i class="fa-solid fa-bars"></i>
+    
+</label>
+                 </div>
+                <ul class="navbar">
+                   <li> <a  href="#" class="activo" onclick="mostrarVista('home')">Inicio</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a></li>         
+                </ul>
+            </nav>
+        </header>
+         <ul class="contenedor3" id="mostrar3">
+                   <li> <a class="activo" href="#" onclick="mostrarVista('home')">Inicio</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg1')">¿Qué es?</a></li>
+                   <li> <a href="#" onclick="mostrarVista('pg2')">Sobre Nosotros</a></li>
+                </ul>
+        <div class="row">
+ <div class="reversa2">
+                <main class="main">
+                    <section class="article">
+                <h3 class="titulo texto oculto">Equipo</h3>
+               <p class="Atext texto oculto">Nosotros somos estudiantes que cursan en Segundo Semestre del grupo F, y estamos en equipos de 3, los cuales son:</p>
+<li class="lista texto oculto">Diseño (invitaciones)</li>
+<li class="lista texto oculto">Cocina</li>
+<li class="lista texto oculto">Exposición</li>
+<h4 class="subtitulo texto oculto">Diseño</h4>
+<p class="Atext texto oculto">Este equipo se encargó de la elaboración de las invitaciones para que usted como invitado pudiera obtener la información necesaria para asistir al evento.</p> 
+<h4 class="subtitulo texto oculto">Cocina</h4>
+<p class="Atext texto oculto">Este equipo es el encargado de la elaboración de los tres platillos que se consumirán durante el evento, y posteriormente serán presentados por el equipo de <b>Exposición</b>.</p>
+<h4 class="subtitulo texto oculto">Exposición</h4>
+<p class="Atext texto oculto">Por último, los miembros de este equipo llevarán a cabo la presentación de cada platillo con información detallada al respecto.</p>
+</section>
+</main>
+        <aside class="aside">
+            <section class="aside_article">
+                <h2 class="titulo">Objetivo</h2>
+          <p class="Atext">Nuestro objetivo es compartir nuestro gusto por la tradicion y cultura de nuestro diverso pais por medio de la comida, que para nosotros es una forma de transmitir una emocion, la cual les compartimos para brindarles una gran experiencia. </p>
+            </section>
+        </aside>
+        </div>
+        <footer class="footer texto oculto">
+            <p class="footer_text">CBTis No.168</p>
+        </footer>
+        </div>
+</div>
+<!-- fin de la tercera seccion -->
+ <script>
+
+       function mostrarVista(id){
+        document.querySelectorAll('.vista').forEach(v => v.classList.remove('activa'));
+        document.getElementById(id).classList.add('activa')
+    }
+ </script>
+ <script>
+    const fehcaObjetivo = new Date("June 20, 2025 10:00:00").getTime();
+    const intervalo = setInterval(() =>{
+        const ahora = new Date().getTime();
+        const diferencia = fehcaObjetivo - ahora;
+        if(diferencia <= 0 ){
+            clearInterval(intervalo);
+            document.getElementById("contador").innerHTML = "Hoy";
+            return;
+
+        }
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 *24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60) / (1000 * 60 )))
+        const segundos = Math.floor((diferencia % (1000 * 60))/1000);
+
+        document.getElementById("contador").innerHTML = `${dias} dias ${horas}h ${minutos}m ${segundos}s`;
+
+    }, 1000)
+ </script>
+ 
+  <script>
+    const checkbox = document.getElementById('check');
+    const menu = document.getElementById('mostrar');
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        menu.classList.add('visible');
+      } else {
+        menu.classList.remove('visible');
+      }
+    });
+  </script>
+  <script>
+    const checkbox2 = document.getElementById('check2');
+    const menu2 = document.getElementById('mostrar2');
+
+    checkbox2.addEventListener('change', function () {
+      if (this.checked) {
+        menu2.classList.add('visible2');
+      } else {
+        menu2.classList.remove('visible2');
+      }
+    });
+  </script>
+  <script>
+    const checkbox3 = document.getElementById('check3');
+    const menu3 = document.getElementById('mostrar3');
+
+    checkbox3.addEventListener('change', function () {
+      if (this.checked) {
+        menu3.classList.add('visible3');
+      } else {
+        menu3.classList.remove('visible3');
+      }
+    });
+  </script>
+ <script>
+  const textos = document.querySelectorAll('.texto');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // Aquí se reinicia
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  textos.forEach(texto => observer.observe(texto));
+</script>
+
+</body>
+</html>
