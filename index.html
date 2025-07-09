@@ -1170,6 +1170,35 @@ background-color: transparent;
 
   textos.forEach(texto => observer.observe(texto));
 </script>
+<script>
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre').value;
+  const personas = document.getElementById('personas').value;
+  const mensaje = document.getElementById('mensaje').value;
+
+  fetch("https://api.sheetbest.com/sheets/94a9740d-fd20-4968-a21b-66716a6c4a0f", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      Nombre: nombre,
+      Personas: personas,
+      Mensaje: mensaje
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("mensajeRespuesta").textContent = "✅ ¡Gracias por confirmar!";
+    document.getElementById("rsvpForm").reset();
+  })
+  .catch(err => {
+    document.getElementById("mensajeRespuesta").textContent = "❌ Ocurrió un error.";
+  });
+});
+</script>
 
 </body>
 </html>
